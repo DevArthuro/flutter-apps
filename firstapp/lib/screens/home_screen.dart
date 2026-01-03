@@ -1,3 +1,4 @@
+import 'package:firstapp/components/button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -28,6 +29,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       appBar: AppBar(title: Text("Hola mundo"), elevation: 10.0),
+      floatingActionButton: ButtonExample(),
     );
   }
 }

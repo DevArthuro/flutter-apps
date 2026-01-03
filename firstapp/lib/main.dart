@@ -1,6 +1,7 @@
 /**
  * Importaciones de librerias de terceros 
  */
+import 'package:firstapp/components/button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -46,6 +47,12 @@ class MyApp extends StatelessWidget {
           ),
         ),
         appBar: AppBar(title: Text("Hola mundo"), elevation: 10.0),
+        floatingActionButton: ButtonExampleWithState(),
+        floatingActionButtonLocation: .centerDocked,
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.yellow,
+          child: Container(height: 50.0),
+        ),
       ),
     );
   }
