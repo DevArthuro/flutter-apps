@@ -1,8 +1,7 @@
 /**
  * Importaciones de librerias de terceros 
  */
-import 'package:firstapp/components/button.dart';
-import 'package:firstapp/screens/home_example.dart';
+import 'package:firstapp/screens/home_counter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen());
+    return MaterialApp(home: HomeCounter());
   }
 }
