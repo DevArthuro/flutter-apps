@@ -7,7 +7,7 @@ class AlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Initial screen"), centerTitle: true),
-      body: Center(child: Text("Hola mundo")),
+      body: Center(child: Text("alert screen")),
     );
   }
 }
