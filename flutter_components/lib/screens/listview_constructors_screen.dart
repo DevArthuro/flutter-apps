@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/theme/app_theme.dart';
 
 class ListViewConstructorScreen extends StatelessWidget {
   static const options = ["Ironman", "Batman", "Superman"];
@@ -12,8 +13,6 @@ class ListViewConstructorScreen extends StatelessWidget {
         title: Text("Initial screen"),
         centerTitle: true,
         elevation: 10,
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
       ),
       body: ListView.separated(
         itemBuilder: (context, index) => ListTile(
@@ -21,7 +20,7 @@ class ListViewConstructorScreen extends StatelessWidget {
           leading: Icon(Icons.arrow_drop_down_outlined),
           trailing: Icon(
             Icons.arrow_forward_ios_outlined,
-            color: Colors.indigo,
+            color: AppTheme.primary,
           ),
           onTap: () {
             print("Hola mundo $index");
