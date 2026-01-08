@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_components/theme/app_theme.dart';
 
 class CardImage extends StatelessWidget {
-  const CardImage({super.key});
+  final String imageUrl;
+  final String? name;
+
+  const CardImage({super.key, required this.imageUrl, this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +18,22 @@ class CardImage extends StatelessWidget {
       child: Column(
         children: [
           FadeInImage(
-            image: NetworkImage(
-              "https://www.ifam.es/colombia/wp-content/uploads/sites/13/2015/08/imagenes-de-paisajes-hermosos-4.jpg",
-            ),
+            image: NetworkImage(imageUrl),
             placeholder: AssetImage("assets/jar-loading.gif"),
-            fit: .contain,
+            fit: .cover,
             width: .infinity,
             fadeInDuration: Duration(milliseconds: 300),
             height: 250,
           ),
+          if (name != null)
+            Container(
+              alignment: .centerRight,
+              padding: .all(20),
+              child: Text(
+                name!,
+                style: TextStyle(fontSize: 20, fontWeight: .bold),
+              ),
+            ),
         ],
       ),
     );
