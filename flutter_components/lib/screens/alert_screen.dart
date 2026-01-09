@@ -3,13 +3,36 @@ import 'package:flutter/material.dart';
 class AlertScreen extends StatelessWidget {
   const AlertScreen({super.key});
 
+  void displayDialog(BuildContext context) {
+    showDialog(
+      barrierDismissible: true,
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          elevation: 0,
+          title: Text("Titulo"),
+          content: Column(
+            mainAxisSize: .min,
+            children: [
+              Text("Este es el contenido de la alerta"),
+              SizedBox(height: 10),
+              FlutterLogo(size: 100),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Initial screen"), centerTitle: true),
       body: Center(
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            displayDialog(context);
+          },
           child: Text(
             "Texto de bóton",
             style: TextStyle(fontSize: 18, fontWeight: .bold),
