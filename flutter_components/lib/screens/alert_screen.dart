@@ -9,8 +9,9 @@ class AlertScreen extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: .circular(20)),
           elevation: 0,
-          title: Text("Titulo"),
+          title: Center(child: Text("Titulo")),
           content: Column(
             mainAxisSize: .min,
             children: [
@@ -19,6 +20,21 @@ class AlertScreen extends StatelessWidget {
               FlutterLogo(size: 100),
             ],
           ),
+          actions: [
+            Row(
+              mainAxisAlignment: .spaceBetween,
+              mainAxisSize: .max,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text("Cancelar"),
+                ),
+                TextButton(onPressed: () {}, child: Text("Enviar")),
+              ],
+            ),
+          ],
         );
       },
     );
